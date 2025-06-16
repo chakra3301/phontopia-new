@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Phonk Web</title>
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Phonk Web" />
+  <meta property="og:description" content="Phonktopia! i wish you were here" />
+  <meta property="og:image" content="https://phonktopia.com/assets/preview.png" />
+  <meta property="og:url" content="https://phonktopia.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/style.css" />
+
+  <!-- Webamp -->
+  <script src="https://cdn.jsdelivr.net/npm/webamp@1.4.2/built/webamp.bundle.min.js" defer></script>
+
+  <!-- Error Logging -->
+  <script>
+    window.addEventListener('error', function (e) {
+      console.error('Script error:', e);
+    });
+  </script>
+
+  <style>
+    body {
+        background-image: url('assets/BG.gif');
+        background-attachment: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        cursor: url('assets/troll.png'), 16 16;
+    }
+
+    @media (max-width: 480px) {
+        body {
+            background-size: 800px 1422px;
+        }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Webamp Container -->
+  <div id="webamp-container"></div>
+
+  <!-- Logo -->
+  <div class="logo-container">
+    <img src="assets/phonklogo.png" alt="Phonk Logo" class="phonk-logo" />
+  </div>
+
+  <!-- Characters -->
+  <div class="characters-container">
+    <img src="assets/retardio.png" alt="Phonk Character Left" class="phonk-character left" />
+    <img src="assets/vag.png" alt="Phonk Character Right" class="phonk-character right" />
+  </div>
+
+  <!-- Social Links -->
+  <div class="social-buttons-container">
+    <a href="https://x.com/Phonk_world" target="_blank" class="social-link">
+      <img src="assets/twtbtt.png" alt="Twitter" class="social-icon">
+    </a>
+    <a href="https://dexscreener.com/solana/45jupg6uluvbc2kjqxcqrskgvvfxwfpguxeqxvdqttqw" target="_blank" class="social-link">
+      <img src="assets/dexbtt.png" alt="DexScreener" class="social-icon">
+    </a>
+    <a href="https://discord.gg/PypufPDNPR" target="_blank" class="social-link">
+      <img src="assets/Discord btt.png" alt="Discord" class="social-icon">
+    </a>
+  </div>
+
+  <!-- Cars -->
+  <div class="cars-container">
+    <img src="assets/cars2.png" alt="Cars" class="cars-image" />
+  </div>
+
+  <!-- Video Feed -->
+  <div id="video-feed" class="video-feed-container"></div>
+
+  <!-- Mobile Carousel -->
+<div id="mobile-video-carousel" style="display: none;">
+  <div class="carousel-video-container" id="carouselSwipeArea"></div>
+</div>
+
+  <!-- Video Popup -->
+  <div class="video-popup-overlay">
+    <div class="video-popup-content"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="scripts/webamp.js"></script>
+  <script src="scripts/video-feed.js" defer></script>
+</body>
+</html>
