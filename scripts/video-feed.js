@@ -66,26 +66,28 @@ function renderCarouselVideo(index) {
   video.autoplay = true;
   video.controlsList = 'nodownload nofullscreen noremoteplayback';
   video.setAttribute('disablePictureInPicture', '');
-  video.controls = false;
+  video.controls = true;
 
   const frame = document.createElement('img');
   frame.src = 'assets/videoframe.png';
   frame.alt = 'Video Frame';
   frame.className = 'video-frame-png';
 
+  // Clear and append first
   carouselContainer.innerHTML = '';
   carouselContainer.appendChild(video);
   carouselContainer.appendChild(frame);
 
-  // Safe async play
-  const playPromise = video.play();
-  if (playPromise !== undefined) {
-    playPromise.catch((error) => {
-      console.warn('Autoplay error:', error.message);
-    });
-  }
+  // Wait until metadata is loaded before calling play
+  video.addEventListener('loadeddata', () => {
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((error) => {
+        console.warn('Autoplay error:', error.message);
+      });
+    }
+  });
 }
-
 // Swipe logic
 let touchStartX = 0;
 let touchEndX = 0;
